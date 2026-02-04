@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Mail, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import { Container } from './Container';
 
 const footerLinks = {
@@ -42,18 +42,9 @@ export function Footer() {
             <p className="text-white/70 text-sm mb-6">
               Professional construction project management for strata managers and body corporates in Queensland.
             </p>
-            <div className="space-y-3">
-              <a
-                href="mailto:hello@casapm.com.au"
-                className="flex items-center gap-3 text-white/70 hover:text-white transition-colors"
-              >
-                <Mail className="w-4 h-4" />
-                <span>hello@casapm.com.au</span>
-              </a>
-              <div className="flex items-start gap-3 text-white/70">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>Brisbane, Queensland</span>
-              </div>
+            <div className="flex items-start gap-3 text-white/70">
+              <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+              <span>Brisbane, Queensland</span>
             </div>
           </div>
 

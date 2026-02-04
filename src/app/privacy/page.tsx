@@ -117,11 +117,12 @@ export default function PrivacyPage() {
             <h2>9. Contact Us</h2>
             <p>
               If you have questions about this Privacy Policy, please contact
-              us:
+              us via our{' '}
+              <a href="/contact" className="text-casa-navy underline">
+                contact form
+              </a>
+              .
             </p>
-            <ul>
-              <li>Email: hello@casapm.com.au</li>
-            </ul>
           </div>
         </div>
       </Container>

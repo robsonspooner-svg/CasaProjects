@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Container } from '@/components/layout';
 import { Card, SectionHeading, Button, Input, Textarea } from '@/components/ui';
-import { Mail, MapPin, Clock, CheckCircle, Loader2 } from 'lucide-react';
+import { MapPin, Clock, CheckCircle, Loader2 } from 'lucide-react';
 
 type FormData = {
   firstName: string;
@@ -85,21 +85,6 @@ export default function ContactPage() {
               </h2>
 
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-casa-navy/5 flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-casa-navy" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-text-primary">Email</p>
-                    <a
-                      href="mailto:hello@casapm.com.au"
-                      className="text-text-secondary hover:text-casa-navy transition-colors"
-                    >
-                      hello@casapm.com.au
-                    </a>
-                  </div>
-                </div>
-
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-casa-navy/5 flex items-center justify-center">
                     <MapPin className="w-6 h-6 text-casa-navy" />

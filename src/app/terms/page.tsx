@@ -115,11 +115,13 @@ export default function TermsPage() {
 
             <h2>13. Contact Information</h2>
             <p>
-              For questions about these Terms of Service, please contact us:
+              For questions about these Terms of Service, please contact us via
+              our{' '}
+              <a href="/contact" className="text-casa-navy underline">
+                contact form
+              </a>
+              .
             </p>
-            <ul>
-              <li>Email: hello@casapm.com.au</li>
-            </ul>
           </div>
         </div>
       </Container>
