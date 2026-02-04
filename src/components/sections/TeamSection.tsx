@@ -8,7 +8,7 @@ const team = [
     name: 'Fin',
     role: 'Business Development Director',
     image: '/team/fin.jpg',
-    bio: `Fin brings over a decade of experience in residential construction, having facilitated more than $20 million in project delivery for one of Queensland's leading home builders. His deep understanding of the construction lifecycle—from client acquisition through to handover—ensures effective stakeholder management and clear communication between committees, contractors, and strata managers throughout every project.`,
+    bio: `Fin brings extensive experience in residential construction, having facilitated more than $20 million in project delivery for one of Queensland's leading home builders. His deep understanding of the construction lifecycle—from client acquisition through to handover—ensures effective stakeholder management and clear communication between committees, contractors, and strata managers throughout every project.`,
     highlights: [
       { icon: Award, text: '$20M+ in construction project facilitation' },
       { icon: Building2, text: 'Expert stakeholder & client relationship management' },
@@ -19,7 +19,7 @@ const team = [
     name: 'Robbie',
     role: 'Technical Director',
     image: '/team/robbie.jpg',
-    bio: `Robbie is a qualified architect holding both a Bachelor's and Master's degree with Honours in Architecture (Professional). His background spans remedial construction coordination and complex procurement management, including oversight of a multi-million dollar equine hospital facility. This unique combination of architectural expertise and hands-on project delivery ensures rigorous technical oversight and documentation that protects your committee.`,
+    bio: `Robbie holds both a Bachelor's and Master's degree with Honours in Architecture (Professional), bringing strong technical foundations to every project. His background spans remedial construction coordination and complex procurement management, including oversight of a multi-million dollar equine hospital facility. This unique combination of architectural training and hands-on project delivery ensures rigorous technical oversight and documentation that protects your committee.`,
     highlights: [
       { icon: GraduationCap, text: 'Master of Architecture (Professional) with Honours' },
       { icon: Award, text: 'Multi-million dollar project procurement & management' },
