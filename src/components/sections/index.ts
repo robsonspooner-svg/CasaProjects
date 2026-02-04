@@ -1,0 +1,9 @@
+export { Hero } from './Hero';
+export { TrustBar } from './TrustBar';
+export { ProblemsWeSolve } from './ProblemsWeSolve';
+export { HowWeWork } from './HowWeWork';
+export { ServicesOverview } from './ServicesOverview';
+export { ClientTypes } from './ClientTypes';
+export { FAQ } from './FAQ';
+export { FinalCTA } from './FinalCTA';
+export { TeamSection } from './TeamSection';

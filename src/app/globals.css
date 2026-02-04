@@ -2,32 +2,210 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  body {
+    @apply bg-canvas text-text-primary;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+@layer components {
+  .section-padding {
+    @apply px-6 py-20 md:px-8 lg:py-28;
+  }
+
+  .gradient-navy {
+    @apply bg-gradient-to-br from-brand-dark to-brand;
+  }
+
+  .gradient-brand {
+    @apply bg-gradient-to-br from-brand-dark to-brand;
+  }
+
+  .gradient-subtle {
+    @apply bg-gradient-to-b from-white to-canvas;
+  }
+
+  .gradient-orange {
+    @apply bg-gradient-to-br from-construction-orange to-construction-orange-dark;
+  }
+
+  .gradient-steel {
+    @apply bg-gradient-to-br from-construction-steel to-construction-steel-dark;
+  }
+
+  /* Blueprint Grid Pattern - using neutral slate instead of purple */
+  .bg-blueprint {
+    background-image:
+      linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-blueprint-light {
+    background-image:
+      linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Construction Stripe Pattern (diagonal safety stripes) */
+  .bg-construction-stripe {
+    background: repeating-linear-gradient(
+      -45deg,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      transparent 10px,
+      rgba(255, 107, 53, 0.05) 10px,
+      rgba(255, 107, 53, 0.05) 20px
+    );
+  }
+
+  .bg-construction-stripe-bold {
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 107, 53, 0.1) 10px,
+      rgba(255, 107, 53, 0.1) 20px
+    );
+  }
+
+  /* Animated Grid for Hero - using neutral slate */
+  .bg-animated-grid {
+    background-image:
+      linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: grid-move 20s linear infinite;
+  }
+
+  /* Concrete Texture (subtle noise) */
+  .bg-concrete {
+    background-color: #f5f5f4;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  /* Steel Background */
+  .bg-steel-texture {
+    @apply bg-construction-steel;
+    background-image:
+      linear-gradient(135deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+      linear-gradient(225deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+      linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+      linear-gradient(315deg, rgba(255,255,255,0.05) 25%, transparent 25%);
+    background-size: 20px 20px;
+  }
+
+  /* Orange accent bar */
+  .accent-bar-orange {
+    @apply relative;
+  }
+  .accent-bar-orange::before {
+    content: '';
+    @apply absolute left-0 top-0 w-1 h-full bg-construction-orange rounded-l;
+  }
+
+  .accent-bar-top-orange {
+    @apply relative;
+  }
+  .accent-bar-top-orange::before {
+    content: '';
+    @apply absolute left-0 top-0 w-full h-1 bg-construction-orange rounded-t;
+  }
+
+  /* Construction button glow effect */
+  .btn-construction-glow {
+    @apply relative overflow-hidden;
+  }
+  .btn-construction-glow::after {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.2) 50%,
+      transparent 70%
+    );
+  }
+  .btn-construction-glow:hover::after {
+    @apply opacity-100;
+    animation: shimmer 0.6s ease-out;
+  }
+
+  /* Card hover lift effect */
+  .card-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+  .card-lift:hover {
+    @apply -translate-y-2 shadow-card-construction;
+  }
+
+  /* Orange border reveal on hover */
+  .border-reveal-orange {
+    @apply relative;
+  }
+  .border-reveal-orange::after {
+    content: '';
+    @apply absolute left-0 bottom-0 w-0 h-0.5 bg-construction-orange transition-all duration-300;
+  }
+  .border-reveal-orange:hover::after {
+    @apply w-full;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Opacity utilities for construction colors */
+  .bg-orange-glow {
+    background: radial-gradient(circle at center, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+  }
+
+  /* Text gradient */
+  .text-gradient-orange {
+    @apply bg-gradient-to-r from-construction-orange to-construction-orange-dark bg-clip-text text-transparent;
+  }
+}
+
+/* Keyframe animations */
+@keyframes grid-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Floating icon positions */
+.floating-icon {
+  @apply absolute opacity-10 text-construction-orange;
+}
+
+.floating-icon-1 {
+  @apply top-[10%] left-[5%] animate-float;
+}
+
+.floating-icon-2 {
+  @apply top-[20%] right-[10%] animate-float-slow;
+}
+
+.floating-icon-3 {
+  @apply bottom-[30%] left-[15%] animate-float-delayed;
+}
+
+.floating-icon-4 {
+  @apply bottom-[15%] right-[5%] animate-float-delayed-2;
+}
+
+.floating-icon-5 {
+  @apply top-[50%] right-[20%] animate-float-delayed-3;
 }
